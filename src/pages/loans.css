@@ -1,0 +1,20 @@
+.loans-page {
+  padding: 1.5rem;
+}
+
+.loans-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.loans-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--foreground);
+}
+
+.loans-subtitle {
+  color: var(--muted-foreground);
+}

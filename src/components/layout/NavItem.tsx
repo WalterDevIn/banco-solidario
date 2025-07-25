@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { useEffect, useState } from "react";
 import { LucideIcon } from "lucide-react";
+import "./nav-item.css";
 
 interface NavItemProps {
   href: string;
@@ -23,21 +24,10 @@ export function NavItem({ href, label, icon: Icon, currentPath }: NavItemProps) 
   }, [isActive]);
 
   return (
-    <Link
-      href={href}
-      className={`flex items-center space-x-2 hover:text-accent transition-all duration-300 ease-out ${
-        isActive ? "text-accent font-medium" : ""
-      }`}
-    >
-      <Icon className="w-4 h-4" />
+    <Link href={href} className={`nav-item ${isActive ? "active" : ""}`}> 
+      <Icon className="icon" />
       {isActive && (
-        <span
-          className={`inline-block w-[80px] text-center transition-all duration-300 ease-out overflow-hidden ${
-            mounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"
-          }`}
-        >
-          {label}
-        </span>
+        <span className={`nav-label ${mounted ? "show" : ""}`}>{label}</span>
       )}
     </Link>
   );

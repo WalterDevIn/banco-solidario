@@ -16,6 +16,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { NavBar } from "./navBar";
 import AdvanceDateModal from "@/components/modals/advance-date-modal";
 import AccessLogModal from "@/components/modals/access-log-modal"; // ajustá el path si es diferente
+import "./header.css";
 
 export default function Header() {
   const [location] = useLocation();
@@ -39,15 +40,15 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-primary text-white shadow-lg">
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+    <header className="app-header">
+      <div className="header-container">
+        <div className="header-content">
           {/* Logo y título */}
-          <div className="flex items-center space-x-4">
-            <University className="text-2xl w-8 h-8" />
+          <div className="header-logo">
+            <University className="icon-large" />
             <div>
-              <h1 className="text-xl font-bold">Banco Solidario</h1>
-              <p className="text-sm text-primary-foreground/80">
+              <h1 className="header-title">Banco Solidario</h1>
+              <p className="header-subtitle">
                 Sistema de Gestión de Préstamos
               </p>
             </div>
@@ -57,7 +58,7 @@ export default function Header() {
           <NavBar />
 
           {/* Botones del lado derecho */}
-          <div className="flex items-center space-x-4">
+          <div className="header-actions">
             {/* Botón para modificar fecha */}
             <Button
               variant="ghost"

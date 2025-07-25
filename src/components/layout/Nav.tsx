@@ -1,6 +1,7 @@
 import { Calendar, DollarSign, Home, Users } from "lucide-react";
 import { useLocation } from "wouter";
 import { NavItem } from "./navItem";
+import "./nav.css";
 
 export function NavBar() {
   const [location] = useLocation();
@@ -13,7 +14,7 @@ export function NavBar() {
   ];
 
   return (
-    <nav className="hidden md:flex space-x-8">
+    <nav className="navbar">
       {navItems.map((item) => (
         <NavItem
           key={item.href}

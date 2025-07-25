@@ -1,0 +1,31 @@
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+  color: inherit;
+}
+.nav-item:hover {
+  color: var(--accent);
+}
+.nav-item.active {
+  color: var(--accent);
+  font-weight: 500;
+}
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+.nav-label {
+  width: 80px;
+  text-align: center;
+  overflow: hidden;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  opacity: 0;
+  transform: translateX(-0.5rem);
+}
+.nav-label.show {
+  opacity: 1;
+  transform: translateX(0);
+}
